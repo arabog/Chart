@@ -38,7 +38,7 @@ export default function Sidebar() {
 
                                                             <li className="sidebarListItem">
                                                                       <TrendingUp className="sidebarIcon" />
-                                                                      Analytic
+                                                                      Sales
                                                             </li>
                                                   </ul>
                                         </div>
