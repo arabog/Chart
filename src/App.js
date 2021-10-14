@@ -14,57 +14,68 @@ import Login from './pages/login/Login';
 import {
 	BrowserRouter as Router,
 	Switch,
-	Route
+	Route,
+	Redirect
 } from "react-router-dom"
+
+import { useContext } from 'react';
+import { AuthContext } from './context/authContext/AuthContext';
 
 
 function App() {
+	const { user } = useContext(AuthContext)
 
 
 	return (
 		<Router>
 			<Switch>
 				<Route path="/login" >
-					<Login />
+					{ user ? <Redirect to= "/" /> : <Login /> }
 				</Route>
 
-				<>
-					<Topbar />
 
-					<div className= "container">
+				{
+					user && (
 
-						<Sidebar />
+						<>
+							<Topbar />
 
-						<Route exact path="/" >
-							<Home />
-						</Route>
+							<div className= "container">
+
+								<Sidebar />
+
+								<Route exact path="/" >
+									<Home />
+								</Route>
 
 
-						<Route path="/users" >
-							<UserList />
-						</Route>
+								<Route path="/users" >
+									<UserList />
+								</Route>
 
-						<Route path="/user/:userId" >
-							<User />
-						</Route>
+								<Route path="/user/:userId" >
+									<User />
+								</Route>
 
-						<Route path="/newuser" >
-							<NewUser />
-						</Route>
+								<Route path="/newuser" >
+									<NewUser />
+								</Route>
 
-						<Route path="/movies" >
-							<ProductList />
-						</Route>
+								<Route path="/movies" >
+									<ProductList />
+								</Route>
 
-						<Route path="/product/:productId" >
-							<Product/>
-						</Route>
+								<Route path="/product/:productId" >
+									<Product/>
+								</Route>
 
-						<Route path="/newproduct" >
-							<NewProduct/>
-						</Route>
-					</div>
-				</>
+								<Route path="/newproduct" >
+									<NewProduct/>
+								</Route>
+							</div>
+						</>
+					)
+				}
 			</Switch>
 		</Router>
 	);
