@@ -15,13 +15,12 @@ export default function WidgetSm() {
                                                   {
                                                             headers: {
                                                                       token:
-                                                                      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTZmYzQ2NDk0Mjc3MTYwNDg4MmMxNiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyNTgzMjMxMSwiZXhwIjoxNjI2MjY0MzExfQ.ATXV-1TTWIGyVBttTQSf0erRWjsgZ8jHQv1ZsUixbng",
+                                                                      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjIwN2MxMDM1ZGJlMzdlYjQxNGEzOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMzkwMzgzNiwiZXhwIjoxNjM0MzM1ODM2fQ.SKgVfHlwmoGaMONNisAhExf0Pj_KHZ-rmipkD5qmcZw"
                                                             }
                                                   }
                                         )
 
                                         setNewUsers(res.data)
-                                        console.log(res.data)
 
                               } catch (err) {
                                         console.log(err)
@@ -30,7 +29,7 @@ export default function WidgetSm() {
 
                     getNewUsers()
           }, [])
-
+          
 
           return (
                     <div className="widgetSm">
@@ -42,8 +41,8 @@ export default function WidgetSm() {
                                                             <li className="widgetSmListItem">
                                                                       <img 
                                                                                 src={
-                                                                                          user.profile.Pic ||
-                                                                                          "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
+                                                                                          user.profilePic ||
+                                                                                          "https://image.shutterstock.com/image-vector/hand-drawn-modern-man-avatar-260nw-1373616869.jpg"
                                                                                 }
                                                                                 alt="" 
                                                                                 className="widgetSmImg" 

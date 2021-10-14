@@ -1,14 +1,16 @@
-import "./products.css"
+import "./movie.css"
 import Chart from "../../components/chart/Chart"
 
 import { Publish } from "@material-ui/icons"
 
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 import { productData } from "../../dummyData"
 
 
-export default function Products() {
+export default function Movie() {
+          const location = useLocation()
+          console.log(location)
 
 
           return (

@@ -5,9 +5,12 @@ import Sidebar from "./components/sidebar/Sidebar"
 import User from "./pages/user/User"
 import UserList from "./pages/userList/UserList"
 import NewUser from "./pages/newUser/NewUser"
-import Product from "./pages/products/Products"
-import ProductList from "./pages/productList/ProductList"
-import NewProduct from "./pages/newProduct/NewProduct"
+import Product from "./pages/newList/NewList"
+import ProductList from "./pages/movieList/MovieList"
+import NewProduct from "./pages/newMovie/NewMovie"
+
+import Login from './pages/login/Login';
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -19,44 +22,50 @@ function App() {
 
 
 	return (
-		<Router className="App">
-			<Topbar />
+		<Router>
+			<Switch>
+				<Route path="/login" >
+					<Login />
+				</Route>
 
-			<div className= "container">
-				<Sidebar />
+				<>
+					<Topbar />
 
-				<Switch>
-					<Route exact path="/" >
-						<Home />
-					</Route>
+					<div className= "container">
 
-					<Route path="/users" >
-						<UserList />
-					</Route>
+						<Sidebar />
 
-					<Route path="/user/:userId" >
-						<User />
-					</Route>
+						<Route exact path="/" >
+							<Home />
+						</Route>
 
-					<Route path="/newuser" >
-						<NewUser />
-					</Route>
 
-					<Route path="/products" >
-						<ProductList />
-					</Route>
+						<Route path="/users" >
+							<UserList />
+						</Route>
 
-					<Route path="/product/:productId" >
-						<Product/>
-					</Route>
+						<Route path="/user/:userId" >
+							<User />
+						</Route>
 
-					<Route path="/newproduct" >
-						<NewProduct/>
-					</Route>
+						<Route path="/newuser" >
+							<NewUser />
+						</Route>
 
-				</Switch>
-			</div>
+						<Route path="/movies" >
+							<ProductList />
+						</Route>
 
+						<Route path="/product/:productId" >
+							<Product/>
+						</Route>
+
+						<Route path="/newproduct" >
+							<NewProduct/>
+						</Route>
+					</div>
+				</>
+			</Switch>
 		</Router>
 	);
 }

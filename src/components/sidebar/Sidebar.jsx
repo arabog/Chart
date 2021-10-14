@@ -5,7 +5,6 @@ import {
           Timeline,
           TrendingUp,
           PermIdentity,
-          Storefront,
           AttachMoney,
           BarChart,
           MailOutline,
@@ -13,10 +12,13 @@ import {
           ChatBubbleOutline,
           WorkOutline,
           Report,
+          PlayCircleOutline,
 } from "@material-ui/icons"
 
 
 export default function Sidebar() {
+
+
           return (
                     <div className="sidebar">
                               <div className="sidebarWrapper">
@@ -54,10 +56,10 @@ export default function Sidebar() {
                                                                       </li>
                                                             </Link>
 
-                                                            <Link to="/products" className="link">
+                                                            <Link to="/movies" className="link">
                                                                       <li className="sidebarListItem">
-                                                                                <Storefront className="sidebarIcon" />
-                                                                                Products
+                                                                                <PlayCircleOutline className="sidebarIcon" />
+                                                                                Movies
                                                                       </li>
                                                             </Link>
 

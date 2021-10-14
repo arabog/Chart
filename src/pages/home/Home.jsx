@@ -49,6 +49,7 @@ export default function Home() {
 					setUserStats(prev => 
 						[
 							...prev, 
+
 							{
 								name: MONTHS[item._id - 1],
 								"New User": item.total,
@@ -64,8 +65,6 @@ export default function Home() {
 
                     getStats()
           }, [MONTHS])
-
-	// console.log(userStats)
           
 
           return (
