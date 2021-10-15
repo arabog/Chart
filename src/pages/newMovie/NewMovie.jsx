@@ -1,12 +1,21 @@
+import { useState } from "react"
 import "./newMovie.css"
 
 
-export default function NewProduct() {
+export default function NewMovie() {
+          const [movie, setMovie ] = useState(null)
+          const [img, setImg] = useState(null)
+          const [imgTitle, setImgTitle ] = useState(null)
+          const [imgSm, setImgSm ] = useState(null)
+          const [trailer, setTrailer ] = useState(null)
+          const [video, setVideo ] = useState(null)
+          
+          const [uploaded, setUploaded ] = useState(0)
 
           
           return (
                     <div className="newProduct">
-                              <h1 className="addProductTitle">New Product</h1>
+                              <h1 className="addProductTitle">New Movie</h1>
 
                               <form className="addProductForm">
                                         <div className="addProductItem">

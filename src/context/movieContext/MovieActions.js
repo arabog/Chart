@@ -68,10 +68,10 @@ export const deleteMovieStart = () => (
           }
 )
 
-export const deleteMovieSuccess = (movie) => (
+export const deleteMovieSuccess = (id) => (
           {
                     type: "DELETE_MOVIE_SUCCESS",
-                    payload: movie
+                    payload: id,
           }
 )
 
