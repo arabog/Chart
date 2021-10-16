@@ -1,24 +1,29 @@
-import firebase from "firebase"
+import firebase from "firebase/compat/app"
+// import "firebase/compat/auth"
+// import "firebase/compat/firestore"
+import "firebase/compat/storage"
 
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAEgIpNbvIq__zUssguErnI4hp2LJWDWuQ",
-  authDomain: "netflix-49f12.firebaseapp.com",
-  projectId: "netflix-49f12",
-  storageBucket: "netflix-49f12.appspot.com",
-  messagingSenderId: "778845666090",
-  appId: "1:778845666090:web:f52525365faebf88727c53"
+	apiKey: process.env.APP_KEY,
+
+	authDomain: "netflix-49f12.firebaseapp.com",
+
+	projectId: "netflix-49f12",
+
+	storageBucket: "netflix-49f12.appspot.com",
+
+	messagingSenderId: "778845666090",
+
+	appId: "1:778845666090:web:f52525365faebf88727c53"
 };
 
-// Initialize Firebase
-// const app = 
 firebase.initializeApp(firebaseConfig);
+// const db = firebase.firestore();
+// const auth = firebase.auth();
+// const provider = new firebase.auth.GoogleAuthProvider();
+const storage =firebase.storage();
 
-const storage = firebase.storage()
+// export { auth, provider, storage};
+// export default db;
 
-export default storage
+export default storage;

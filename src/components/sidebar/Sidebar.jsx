@@ -5,7 +5,7 @@ import {
           Timeline,
           TrendingUp,
           PermIdentity,
-          AttachMoney,
+          List,
           BarChart,
           MailOutline,
           DynamicFeed,
@@ -64,7 +64,7 @@ export default function Sidebar() {
                                                             </Link>
 
                                                             <li className="sidebarListItem">
-                                                                      <AttachMoney className="sidebarIcon" />
+                                                                      <List className="sidebarIcon" />
                                                                       Transactions
                                                             </li>
 

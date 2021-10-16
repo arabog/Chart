@@ -27,7 +27,7 @@ export default function Login() {
                     <div className="login">
                               <form className="logiinForm">
                                         <input 
-                                                  type="text" 
+                                                  type="email" 
                                                   placeholder="email" 
                                                   className="loginInput"
                                                   onChange = {e => setEmail(e.target.value)}

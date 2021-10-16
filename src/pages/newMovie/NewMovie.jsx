@@ -32,8 +32,7 @@ export default function NewMovie() {
           }
 
           // https://firebase.google.com/docs/storage/web/upload-files
-          const uploadFirebaseFxn = (items) => {
-                    // console.log(items)
+          const upload = (items) => {
 
                     items.forEach(item => {
                               const fileName = new Date().getTime() + item.label + item.file.name
@@ -75,7 +74,7 @@ export default function NewMovie() {
           const handleUpload = (e) => {
                     e.preventDefault()
 
-                    uploadFirebaseFxn(
+                    upload(
                               [
                                         {file: img, label: "img"},
                                         {file: imgTitle, label: "imgTitle"},
