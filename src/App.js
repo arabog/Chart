@@ -2,6 +2,7 @@ import './App.css';
 import Home from "./pages/home/Home"
 import Topbar from "./components/topbar/Topbar"
 import Sidebar from "./components/sidebar/Sidebar"
+
 import User from "./pages/user/User"
 import UserList from "./pages/userList/UserList"
 import NewUser from "./pages/newUser/NewUser"
@@ -9,6 +10,9 @@ import NewUser from "./pages/newUser/NewUser"
 import Movie from "./pages/movie/Movie"
 import MovieList from "./pages/movieList/MovieList"
 import NewMovie from "./pages/newMovie/NewMovie"
+import ListList from "./pages/listList/ListList"
+import List from "./pages/list/List"
+import NewList from "./pages/newList/NewList"
 
 import Login from './pages/login/Login';
 
@@ -49,6 +53,17 @@ function App() {
 									<Home />
 								</Route>
 
+								<Route path="/lists" >
+									<ListList />
+								</Route>
+
+								<Route path="/list/:listId" >
+									<List />
+								</Route>
+
+								<Route path="/newlist" >
+									<NewList />
+								</Route>
 
 								<Route path="/users" >
 									<UserList />

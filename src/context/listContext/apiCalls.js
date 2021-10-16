@@ -19,7 +19,13 @@ export const createLists = async (list, dispatch) => {
           dispatch(createListsStart())
 
           try {
-                    const res = await axios.post("/lists", list)
+                    const res = await axios.post("/lists", list, 
+                    `         {
+                                        headers: {
+                                                  token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+                                        }
+                              }`
+                    )
 
                     dispatch(createListsSuccess(res.data))
           } catch (err) {
@@ -33,7 +39,13 @@ export const getLists = async (dispatch) => {
           dispatch(getListsStart())
 
           try {
-                    const res = await axios.get("/lists")
+                    const res = await axios.get("/lists", 
+                              {
+                                        headers: {
+                                                            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+                                                  }
+                              }
+                    )
 
                     dispatch(getListsSuccess(res.data))
           } catch (err) {
@@ -47,7 +59,13 @@ export const deleteLists = async (id, dispatch) => {
           dispatch(deleteListStart())
 
           try {
-                    await axios.delete("/lists" + id)
+                    await axios.delete("/lists/" + id, 
+                              {
+                                        headers: {
+                                                  token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+                                        }
+                              }
+                    )
 
                     dispatch(deleteListSuccess(id))
           } catch (err) {
